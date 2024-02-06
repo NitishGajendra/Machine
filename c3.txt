@@ -1,0 +1,24 @@
+// program c3
+1. Download selenium(Grid) LTS version
+2. chromedriver download -> chromedriverwin64
+3. Eclipe:  Java project-> Next-> libraries-> classpath -> add external JARs-> select selenium
+            Sample.java:
+
+package bro;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Sample {
+	public static void main(String[] args) {
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Nitish Gajendra\\Downloads\\chromedriver-win64 (1)\\chromedriver-win64\\chromedriver.exe");
+                                                  //"-----------------------------path of chromedriver--------------------------------------------------"
+			ChromeDriver d=new ChromeDriver();
+			d.manage().window().maximize();
+			d.get("https://vvce.ac.in/");
+			d.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+			d.findElement(By.xpath("//*[@id=\"wpcf7-f1068-p8957-o1\"]/form/div[2]/div[1]/span/input"));
+	}
+}
+//save and run
