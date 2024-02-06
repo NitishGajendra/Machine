@@ -1,0 +1,22 @@
+//c1 maven
+
+1.create a Maven Project
+2.In that project create new folder 'json'. In json, create new file sample.json
+
+sample.json:
+
+{
+	"first":"Sachin",
+	"last": "Tendulkar"
+}
+
+3.in src/test/java -> maven.maven -> newfile Main.java
+
+Main.java:
+
+public static void main(String args[]) throws Exception, IOException, ParseException{
+	JSONObject obj= (JSONObject) new JSONParser().parse(new FileReader("./json/sample.json"));
+	String f=(String)obj.get("first");
+	String l=(String)obj.get("last");
+	System.out.print(f+" "+l);
+}
