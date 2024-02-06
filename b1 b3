@@ -1,0 +1,35 @@
+Program 4:  
+
+java file--> 
+
+public class doc{
+    public static void main(String args[]){
+        System.out.println("Test");
+    }
+}
+
+docker file-->
+
+FROM openjdk
+WORKDIR / app
+COPY . / app
+RUN javac Main.java
+CMD ["java","Main"]
+
+In terminal-->
+
+javac Main.java
+java Main
+docker build -t image2 .
+docker run --name javaappli image2
+
+===========================================================================================
+Program 6: continuation of 4
+
+In terminal
+
+          
+docker tag docjava:latest 20cse0149/image2
+docker push 20cse0149/image2
+
+      
